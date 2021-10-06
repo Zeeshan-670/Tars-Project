@@ -1,0 +1,22 @@
+﻿.heading-title{
+    border-radius:50px;
+    width:50%;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
+.heading-title  > h2{
+    color:#fff;
+}
+.message {
+    border-radius: 20px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+
+.Compose {
+    background-color:red;
+}

@@ -1,0 +1,200 @@
+﻿@model Semester_End.Models.Mailing
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+
+<!-- Begin page -->
+<div id="wrapper">
+
+    !-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-sm-12">
+                        <div class="inbox-app-main">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <aside id="sidebar" class="nano">
+                                        <div class="nano-content">
+
+                                            <div class="text-center">
+                                                <a asp-action="Create" class="btn btn-danger btn-rounded width-lg waves-effect waves-light mb-2 mt-3" data-animation="fadein">Compose</a>
+                                            </div>
+                                            <menu class="menu-segment">
+                                                <ul class="list-unstyled">
+                                                    <li class="active">
+                                                        <a href="javascript:void(0);">Inbox<span> (43)</span></a>
+                                                    </li>
+                                                    <li><a href="javascript:void(0);">Sent</a></li>
+                                                    <li><a href="javascript:void(0);">Recieve</a></li>
+                                                </ul>
+                                            </menu>
+
+                                        </div>
+                                    </aside>
+                                </div> <!-- end col -->
+
+
+                                    <div class="col-md-9">
+                                        <div style="height:350px;">
+                                            <div class="header">
+                                                <h4 class="page-title">
+                                                    <a class="icon circle-icon mdi mdi-close text-muted trigger-message-close"></a>Process<span class="grey">(6)</span>
+                                                </h4>
+                                                <p>
+                                                    From <a href="#">"tarsdelivery20@gmail.com"</a> to <a href="#"> @Html.DisplayFor(model => model.To)</a>, started on
+                                                <a id="date"></a>
+                                                <script>
+                                                    document.getElementById("date").innerHTML = Date();
+                                                </script>
+                                                .
+                                                </p>
+                                            </div>
+                                            <div id="message-nano-wrapper" class="nano">
+                                                <div class="nano-content">
+                                                    <ul class="message-container list-unstyled">
+                                                        <li class="received">
+                                                            <div class="details">
+                                                                <div class="left">
+                                                                    "tarsdelivery20@gmail.com"
+                                                                    <div class="arrow orange ml-5">To</div>
+                                                                   @Html.DisplayFor(model => model.To)
+
+                                                                </div>
+                                                                <div class="right">
+                                                                    <p id="date"></p>
+                                                                    <script>
+                                                                        document.getElementById("date").innerHTML = Date();
+                                                                    </script>
+                                                                </div>
+                                                            </div>
+                                                            <div class="message">
+                                                                <p style="text-align:left;">
+                                                                    <Strong style="text-align:left;">@Html.DisplayNameFor(model => model.To)&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Strong> |----->  @Html.DisplayFor(model => model.To)
+                                                                </p>
+                                                                <p style="text-align:left;">
+                                                                    <Strong style="text-align:left;">@Html.DisplayNameFor(model => model.Subject)</Strong>&nbsp;&nbsp; |----->  @Html.DisplayFor(model => model.Subject)
+                                                                </p>
+                                                                <p style="text-align:left;">
+                                                                    <Strong style="text-align:left;">@Html.DisplayNameFor(model => model.Subject)</Strong>&nbsp;&nbsp; |----->   @Html.DisplayFor(model => model.Text).
+                                                                </p>
+                                                            </div>
+                                                            <div class="tool-box">
+                                                                <a asp-action="Index" class="circle-icon small mdi mdi-share"></a>
+                                                                <a href="#" class="circle-icon small red-hover mdi mdi-close"></a>
+                                                                <a href="#" class="circle-icon small red-hover mdi mdi-flag"></a>
+                                                            </div>
+                                                        </li>
+
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end col -->
+                            </div><!-- end row -->
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- End row -->
+
+
+            </div> <!-- container-fluid -->
+
+        </div> <!-- content -->
+
+
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+
+
+
+
+
+<div id="message">
+    <div class="header">
+        <h4 class="page-title">
+            <a class="icon circle-icon mdi mdi-close text-muted trigger-message-close"></a>Process<span class="grey">(6)</span>
+        </h4>
+        <p>
+            From <a href="#">You</a> to <a href="#">Scott Waite</a>, started on <a href="#">March 2, 2014</a> at 2:14 pm est.
+        </p>
+    </div>
+    <div id="message-nano-wrapper" class="nano has-scrollbar">
+        <div class="nano-content" tabindex="0" style="right: -17px;">
+            <ul class="message-container list-unstyled">
+                <li class="sent">
+                    <div class="details">
+                        <div class="left">
+                            You
+                            <div class="arrow"></div>
+                            Scott
+                        </div>
+                        <div class="right">March 6, 2014, 20:08 pm</div>
+                    </div>
+                    <div class="message">
+                        <p>
+                            |  @Html.DisplayFor(model => model.To)
+                        </p>
+                        <p>
+                            |  @Html.DisplayFor(model => model.Subject)
+                        </p>
+                        <p>
+                            |  @Html.DisplayFor(model => model.Text)
+                        </p>
+                    </div>
+                    <div class="tool-box">
+                        <a href="#" class="circle-icon small mdi mdi-share"></a><a href="#" class="circle-icon small red-hover mdi mdi-close"></a><a href="#" class="circle-icon small red-hover mdi mdi-flag"></a>
+                    </div>
+                </li>
+                <li class="received">
+                    <div class="details">
+                        <div class="left">
+                            Scott
+                            <div class="arrow orange"></div>
+                            You
+                        </div>
+                        <div class="right">March 6, 2014, 20:08 pm</div>
+                    </div>
+                    <div class="message">
+                        <p>
+                            |  @Html.DisplayFor(model => model.To)
+                        </p>
+                        <p>
+                            |  @Html.DisplayFor(model => model.Subject)
+                        </p>
+                        <p>
+                            |  @Html.DisplayFor(model => model.Text)
+                        </p>
+                    </div>
+                    <div class="tool-box">
+                        <a asp-action="Index" class="circle-icon small mdi mdi-share"></a>
+                        <a href="#" class="circle-icon small mdi mdi-share"></a><a href="#" class="circle-icon small red-hover mdi mdi-close"></a><a href="#" class="circle-icon small red-hover mdi mdi-flag"></a>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+        <div class="nano-pane"><div class="nano-slider" style="height: 20px; transform: translate(0px, 0px);"></div></div>
+    </div>
+</div>

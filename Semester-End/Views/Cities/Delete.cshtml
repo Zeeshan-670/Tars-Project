@@ -1,0 +1,46 @@
+﻿@model Semester_End.Models.City
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<
+
+<!-- Begin page -->
+<div id="wrapper">
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <div class="heading-title shadow-lg p-1 mb-2 mt-3 bg-warning"><h2>Create Employee</h2></div>
+                <div class="message shadow p-2 mb-4 bg-white">You want to Create New Employee</div>
+<div>
+    <h4>City</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CityName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CityName)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
+ </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+﻿@model Semester_End.Models.Admin
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+
+<!-- Begin page -->
+<div id="wrapper">
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <div class="heading-title shadow-lg p-1 mb-2 mt-3 bg-warning"><h2>Admin Details</h2></div>
+                <div class="message shadow p-2 mb-4 bg-white">Admin details</div>
+
+
+
+
+
+
+
+
+<hr />
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.FirstName)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.FirstName)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.LastName)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.LastName)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.UserName)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.UserName)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Email)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Email)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Password)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Password)
+    </dd>
+</dl>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+    </div>
+</div>
+<!-- END wrapper -->

@@ -1,0 +1,63 @@
+﻿@model Semester_End.Models.Branch
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+
+
+<!-- Begin page -->
+<div id="wrapper">
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <div class="heading-title shadow-lg p-1 mb-2 mt-3 bg-warning"><h2>Create Employee</h2></div>
+                <div class="message shadow p-2 mb-4 bg-white">You want to Create New Employee</div>
+
+                <div>
+                    <h4>Branch</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Branch1)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Branch1)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.StartTime)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.StartTime)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.EndTime)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.EndTime)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.CityNavigation)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.CityNavigation.CityName)
+                        </dd>
+                    </dl>
+                </div>
+                <div>
+                    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+                    <a asp-action="Index">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,103 @@
+﻿@model Semester_End.Models.Employee
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="account-pages mt-5 mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="text-center">
+                    <a href="index.html" class="logo">
+                        <img src="~/Content/assets/img/logo/logo-black.png" alt="" height="50" class="logo-light mx-auto mt-5 mb-4">
+                        <img src="~/Content/assets/img/logo/logo-black.png" alt="" height="50" class="logo-dark mx-auto mb-4">
+                    </a>
+                </div>
+                <div class="card" style="border-radius: 100px;">
+
+                    <div class="card-body p-4">
+                        <div class="text-center mb-4">
+                            <div class="heading-title shadow-lg p-1 mb-2 mt-3 bg-warning" id=""><h2>Details</h2></div>
+                            <div class="message shadow p-2 mb-4 bg-white">All Details About @Html.DisplayFor(model => model.UserName) are follow..</div>
+
+                        </div>
+
+
+                        <div>
+                            <hr />
+                            <dl class="row" style="margin-left:25px;">
+                                <dt class="col-sm-4">
+                                    @Html.DisplayNameFor(model => model.FirstName) :
+                                </dt>
+                                <dd class="col-sm-8">
+                                    @Html.DisplayFor(model => model.FirstName)
+                                </dd>
+                                <dt class="col-sm-4">
+                                    @Html.DisplayNameFor(model => model.LastName) :
+                                </dt>
+                                <dd class="col-sm-8">
+                                    @Html.DisplayFor(model => model.LastName)
+                                </dd>
+                                <dt class="col-sm-4">
+                                    @Html.DisplayNameFor(model => model.UserName) :
+                                </dt>
+                                <dd class="col-sm-8">
+                                    @Html.DisplayFor(model => model.UserName)
+                                </dd>
+                                <dt class="col-sm-4">
+                                    @Html.DisplayNameFor(model => model.Email) :
+                                </dt>
+                                <dd class="col-sm-8">
+                                    @Html.DisplayFor(model => model.Email)
+                                </dd>
+                                <dt class="col-sm-4">
+                                    @Html.DisplayNameFor(model => model.Password) :
+                                </dt>
+                                <dd class="col-sm-8">
+                                    @Html.DisplayFor(model => model.Password)
+                                </dd>
+                                <dt class="col-sm-4">
+                                    @Html.DisplayNameFor(model => model.Dob) :
+                                </dt>
+                                <dd class="col-sm-8">
+                                    @Html.DisplayFor(model => model.Dob)
+                                </dd>
+                                <dt class="col-sm-4">
+                                    @Html.DisplayNameFor(model => model.ContactNo) :
+                                </dt>
+                                <dd class="col-sm-8">
+                                    @Html.DisplayFor(model => model.ContactNo)
+                                </dd>
+                                <dt class="col-sm-4">
+                                    @Html.DisplayNameFor(model => model.Address) :
+                                </dt>
+                                <dd class="col-sm-8">
+                                    @Html.DisplayFor(model => model.Address)
+                                </dd>
+                                <dt class="col-sm-4">
+                                    @Html.DisplayNameFor(model => model.Salary) :
+                                </dt>
+                                <dd class="col-sm-8">
+                                    @Html.DisplayFor(model => model.Salary)
+                                </dd>
+                            </dl>
+
+                            <form asp-action="Delete" class="row">
+                                <input type="hidden" asp-for="Id" />
+                                <div class="col-md-6">
+                                    <button asp-action="Edit" asp-route-id="@Model.Id" class="btn w-100" style="border-radius: 10px; color: white; background-color: #f5b008;">Edit</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button asp-action="Index" type="submit" class="btn w-100" style="border-radius: 10px; color: white; background-color: #f5b008;">Back to List</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

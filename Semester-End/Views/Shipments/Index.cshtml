@@ -1,0 +1,146 @@
+﻿@model IEnumerable<Semester_End.Models.Shipment>
+
+@{ ViewData["Title"] = "Index";
+                Layout = "~/Views/Shared/_DashboardLayout.cshtml"; }
+
+
+$(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+
+<div id="wrapper">
+
+    <div class="content-page">
+        <div class="content">
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="heading-title shadow-lg p-1 mb-4 mt-2 bg-warning"><h2>List Of All Shipments</h2></div>
+                                <div class="message shadow p-2 mb-1 bg-white"> <a asp-action="Create">You want to Create New Shipment</a></div>
+                                <div class="table-responsive">
+                                    <table class="table table-centered mb-0" id="myTable">
+                                        <thead class="bg-warning text-white">
+                                            <tr>
+                                                <th scope="col">
+                                                    @Html.DisplayNameFor(model => model.TrackingId)
+                                                </th>
+                                                <th scope="col">
+                                                    @Html.DisplayNameFor(model => model.TimeShipped)
+                                                </th>
+                                                <th scope="col">
+
+                                                    @Html.DisplayNameFor(model => model.DateShipped)
+                                                </th>
+                                                <th scope="col">
+
+                                                    @Html.DisplayNameFor(model => model.SenderAddress)
+                                                </th>
+                                                <th scope="col">
+
+                                                    @Html.DisplayNameFor(model => model.DeliveryAddress)
+                                                </th>
+                                                <th scope="col">
+
+                                                    @Html.DisplayNameFor(model => model.OrderStatus)
+                                                </th>
+                                                <th scope="col">
+
+                                                    @Html.DisplayNameFor(model => model.DeliveryStatus)
+                                                </th>
+                                                <th scope="col">
+
+                                                    @Html.DisplayNameFor(model => model.Weight)
+                                                </th>
+                                                <th scope="col">
+
+                                                    @Html.DisplayNameFor(model => model.Charges)
+                                                </th>
+                                                <th scope="col">
+
+                                                    @Html.DisplayNameFor(model => model.SignatureRequired)
+                                                </th>
+                                                <th scope="col">
+
+                                                    @Html.DisplayNameFor(model => model.Branch)
+                                                </th>
+                                                <th scope="col">
+
+                                                    @Html.DisplayNameFor(model => model.PaymentNavigation)
+                                                </th>
+                                                <th scope="col">
+
+                                                    @Html.DisplayNameFor(model => model.ServicesTypeNavigation)
+                                                </th>
+
+
+                                                <th scope="col">Edit</th>
+                                                <th scope="col">Details</th>
+                                                <th scope="col">Delete</th>
+
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                            {
+                                <tr class="input-field" id="@Html.DisplayFor(modelItem => item.Id)">
+                                    <td><span class="tabledit-span tabledit-identifier"> @Html.DisplayFor(modelItem => item.Id)</span><input asp-action="Edit" asp-route-id="@item.Id" class="tabledit-input tabledit-identifier" type="hidden" value="@Html.DisplayFor(modelItem => item.Id)" disabled=""></td>
+
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span">   @Html.DisplayFor(modelItem => item.TrackingId) </span></td>
+
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span"> @Html.DisplayFor(modelItem => item.TimeShipped)</span></td>
+
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span"> @Html.DisplayFor(modelItem => item.DateShipped)</span></td>
+
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span"> @Html.DisplayFor(modelItem => item.SenderAddress)</span></td>
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span"> @Html.DisplayFor(modelItem => item.DeliveryAddress)</span></td>
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span"> @Html.DisplayFor(modelItem => item.OrderStatus)</span></td>
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span"> @Html.DisplayFor(modelItem => item.DeliveryStatus)</span></td>
+                                    <td class="input-field tabledit-view-mode"><span class="input-field tabledit-span"> @Html.DisplayFor(modelItem => item.Weight)</span></td>
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span"> @Html.DisplayFor(modelItem => item.Charges)</span></td>
+
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span"> @Html.DisplayFor(modelItem => item.SignatureRequired)</span></td>
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span"> @Html.DisplayFor(modelItem => item.Branch.Branch1)</span></td>
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span">@Html.DisplayFor(modelItem => item.PaymentNavigation.PaymentMethod1)</span></td>
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span"> @Html.DisplayFor(modelItem => item.ServicesTypeNavigation.ServiceName)</span></td>
+
+                                    <td style="white-space: nowrap; width: 1%;">
+                                        <div class="tabledit-toolbar btn-toolbar" style="text-align: left;">
+                                            <div class="btn-group btn-group-sm" style="float: none;"><a asp-action="Edit" asp-route-id="@item.Id" type="button" class="tabledit-edit-button btn btn-success" style="float: none;"><span class="mdi mdi-pencil"></span></a></div>
+                                        </div>
+                                    </td>
+                                    <td style="white-space: nowrap; width: 1%;">
+                                        <div class="tabledit-toolbar btn-toolbar" style="text-align: left;">
+                                            <div class="btn-group btn-group-sm" style="float: none;"><a type="button" asp-action="Details" asp-route-id="@item.Id" class="tabledit-edit-button btn btn-info" style="float: none;"><span class="mdi mdi-details"></span></a></div>
+                                        </div>
+                                    </td>
+                                    <td style="white-space: nowrap; margin-left:-20px; width: 1%;">
+                                        <div class="tabledit-toolbar btn-toolbar" style="text-align: left;">
+                                            <div class="btn-group btn-group-sm" style="float: none;"><a type="button" asp-action="Delete" asp-route-id="@item.Id" class="tabledit-edit-button btn btn-danger" style="float: none;"><span class="mdi mdi-delete-empty"></span></a></div>
+                                        </div>
+                                    </td>
+                                </tr>}
+                                        </tbody>
+
+
+                                    </table>
+                                </div> <!-- end .table-responsive-->
+                            </div> <!-- end card-body -->
+                        </div> <!-- end card -->
+                    </div> <!-- end col -->
+                </div>
+
+            </div> <!-- container-fluid -->
+        </div> <!-- content -->
+    </div>
+</div>
+
+
+
+
+@{ ViewData["Title"] = "Blog"; }

@@ -1,0 +1,78 @@
+﻿@model Semester_End.ViewModels.LoginViewModel
+
+@{
+
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+
+
+
+
+<div class="account-pages mt-5 mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="text-center">
+                    <a href="index.html" class="logo">
+                        <img src="~/Content/assets/img/logo/logo-black.png" alt="" height="50" class="logo-light mx-auto mt-5 mb-4">
+                        <img src="~/Content/assets/img/logo/logo-black.png" alt="" height="50" class="logo-dark mx-auto mb-4">
+                    </a>
+                </div>
+                <div class="card" style="border-radius: 100px;">
+
+                    <div class="card-body p-4">
+
+                        <div class="text-center mb-4">
+                            <h2 class="text-uppercase mt-0">Login</h2>
+                        </div>
+
+                        <form method="post">
+                            <div asp-validation-summary="All" class="text-danger"></div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Email">Email address</label>
+                                <input class="form-control" asp-for="Email" type="email" id="emailaddress" placeholder="Enter your email">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Password">Password</label>
+                                <input class="form-control" asp-for="Password" type="password"  id="password" placeholder="Enter your password">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" asp-for="RememberMe" class="custom-control-input" id="checkbox-signin" checked>
+                                    <label class="custom-control-label" asp-for="RememberMe">@Html.DisplayNameFor(m => m.RememberMe)</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-0 text-center">
+                                <button class="btn btn-primary btn-block" type="submit"> Log In </button>
+                            </div>
+
+                        </form>
+
+                    </div> <!-- end card-body -->
+                </div>
+                <!-- end card -->
+
+                <div class="row mt-3">
+                    <div class="col-12 text-center">
+                        <p> <a asp-action="Recovery" asp-controller="Login" class="text-muted ml-1"><i class="fa fa-lock mr-1"></i>Forgot your password?</a></p>
+                        <p class="text-muted">Don't have an account? <a asp-action="Register" asp-controller="Account" class="text-dark ml-1"><b>Register</b></a></p>
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</div>
+<!-- end page -->

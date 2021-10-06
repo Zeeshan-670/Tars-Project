@@ -1,0 +1,116 @@
+﻿@model IEnumerable<Semester_End.Models.Employee>
+
+@{ ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml"; }
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#myTable').datatable();
+    });
+</script>
+<div id="wrapper">
+
+    <div class="content-page">
+        <div class="content">
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="heading-title shadow-lg p-1 mb-4 mt-2 bg-warning"><h2>List Of All Employees</h2></div>
+
+                                <div class="table-responsive">
+                                    <table class="table table-centered mb-0" id="myTable">
+                                        <thead class="bg-warning text-white">
+                                            <tr>
+                                                <th scope="col">
+                                                    @Html.DisplayNameFor(model => model.Id)
+                                                </th>
+                                                <th scope="col">
+                                                    @Html.DisplayNameFor(model => model.FirstName)
+                                                </th>
+                                                <th scope="col">
+                                                    @Html.DisplayNameFor(model => model.LastName)
+                                                </th>
+                                                <th scope="col">
+                                                    @Html.DisplayNameFor(model => model.UserName)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.Email)
+                                                </th>
+                                                <th scope="col">
+                                                    @Html.DisplayNameFor(model => model.Password)
+                                                </th>
+                                                <th scope="col">
+                                                    @Html.DisplayNameFor(model => model.Dob)
+                                                </th>
+                                                <th scope="col">
+                                                    @Html.DisplayNameFor(model => model.ContactNo)
+                                                </th>
+                                                <th scope="col">
+                                                    @Html.DisplayNameFor(model => model.Address)
+                                                </th>
+                                                <th scope="col">
+                                                    @Html.DisplayNameFor(model => model.Salary)
+                                                </th>
+                                                <th scope="col">Edit</th>
+                                                <th scope="col">Details</th>
+                                                <th scope="col">Delete</th>
+
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                            {
+                                <tr class="input-field" id="@Html.DisplayFor(modelItem => item.Id)">
+                                    <td><span class="tabledit-span tabledit-identifier"> @Html.DisplayFor(modelItem => item.Id)</span><input asp-action="Edit" asp-route-id="@item.Id" class="tabledit-input tabledit-identifier" type="hidden" value="@Html.DisplayFor(modelItem => item.Id)" disabled=""></td>
+
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span">  @Html.DisplayFor(modelItem => item.FirstName) </span></td>
+
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span"> @Html.DisplayFor(modelItem => item.LastName)</span></td>
+
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span"> @Html.DisplayFor(modelItem => item.UserName)</span></td>
+
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span"> @Html.DisplayFor(modelItem => item.Email)</span></td>
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span"> @Html.DisplayFor(modelItem => item.Password)</span></td>
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span"> @Html.DisplayFor(modelItem => item.Dob)</span></td>
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span"> @Html.DisplayFor(modelItem => item.ContactNo)</span></td>
+                                    <td class="input-field tabledit-view-mode"><span class="input-field tabledit-span"> @Html.DisplayFor(modelItem => item.Address)</span></td>
+                                    <td class="tabledit-view-mode"><span class="input-field tabledit-span"> @Html.DisplayFor(modelItem => item.Salary)</span></td>
+
+                                    <td style="white-space: nowrap; width: 1%;">
+                                        <div class="tabledit-toolbar btn-toolbar" style="text-align: left;">
+                                            <div class="btn-group btn-group-sm" style="float: none;"><a asp-action="Edit" asp-route-id="@item.Id" type="button" class="tabledit-edit-button btn btn-success" style="float: none;"><span class="mdi mdi-pencil"></span></a></div>
+                                        </div>
+                                    </td>
+                                    <td style="white-space: nowrap; width: 1%;">
+                                        <div class="tabledit-toolbar btn-toolbar" style="text-align: left;">
+                                            <div class="btn-group btn-group-sm" style="float: none;"><a type="button" asp-action="Details" asp-route-id="@item.Id" class="tabledit-edit-button btn btn-info" style="float: none;"><span class="mdi mdi-details"></span></a></div>
+                                        </div>
+                                    </td>
+                                    <td style="white-space: nowrap; margin-left:-20px; width: 1%;">
+                                        <div class="tabledit-toolbar btn-toolbar" style="text-align: left;">
+                                            <div class="btn-group btn-group-sm" style="float: none;"><a type="button" asp-action="Delete" asp-route-id="@item.Id" class="tabledit-edit-button btn btn-danger" style="float: none;"><span class="mdi mdi-delete-empty"></span></a></div>
+                                        </div>
+                                    </td>
+                                </tr>}
+                                        </tbody>
+
+
+                                    </table>
+                                </div> <!-- end .table-responsive-->
+                            </div> <!-- end card-body -->
+                        </div> <!-- end card -->
+                    </div> <!-- end col -->
+                </div>
+
+            </div> <!-- container-fluid -->
+        </div> <!-- content -->
+    </div>
+</div>
+
+

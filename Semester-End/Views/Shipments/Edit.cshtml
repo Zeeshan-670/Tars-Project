@@ -1,0 +1,96 @@
+﻿@model Semester_End.Models.Shipment
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div id="wrapper">
+
+    <div class="content-page">
+        <div class="content">
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <div class="heading-title shadow-lg p-1 mb-2 mt-3 bg-warning" id=""><h2>Shipment Edit</h2></div>
+                <div class="message shadow p-2 mb-4 bg-white">You want to Edit the Data of  @Html.DisplayFor(model => model.TrackingId)?</div>
+
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group col-md-5">
+                        <label asp-for="TrackingId" class="control-label"></label>
+                        <input asp-for="TrackingId" class="form-control" />
+                        <span asp-validation-for="TrackingId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="TimeShipped" class="control-label"></label>
+                        <input asp-for="TimeShipped" class="form-control" />
+                        <span asp-validation-for="TimeShipped" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="DateShipped" class="control-label"></label>
+                        <input asp-for="DateShipped" class="form-control" />
+                        <span asp-validation-for="DateShipped" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="BranchId" class="control-label"></label>
+                        <select asp-for="BranchId" class="form-control" asp-items="ViewBag.BranchId"></select>
+                        <span asp-validation-for="BranchId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="SenderAddress" class="control-label"></label>
+                        <input asp-for="SenderAddress" class="form-control" />
+                        <span asp-validation-for="SenderAddress" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="DeliveryAddress" class="control-label"></label>
+                        <input asp-for="DeliveryAddress" class="form-control"  />
+                        <span asp-validation-for="DeliveryAddress" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group col-md-2">
+                        <label asp-for="OrderStatus" class="control-label"></label>
+                        <input asp-for="OrderStatus" class="form-control" />
+                        <span asp-validation-for="OrderStatus" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="DeliveryStatus" class="control-label"></label>
+                        <input asp-for="DeliveryStatus" class="form-control" />
+                        <span asp-validation-for="DeliveryStatus" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="ServicesType" class="control-label"></label>
+                        <select asp-for="ServicesType" class="form-control" asp-items="ViewBag.ServicesType"></select>
+                        <span asp-validation-for="ServicesType" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="Weight" class="control-label"></label>
+                        <input asp-for="Weight" class="form-control" />
+                        <span asp-validation-for="Weight" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="Charges" class="control-label"></label>
+                        <input asp-for="Charges" class="form-control" />
+                        <span asp-validation-for="Charges" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label asp-for="Payment" class="control-label"></label>
+                        <select asp-for="Payment" class="form-control" asp-items="ViewBag.Payment"></select>
+                        <span asp-validation-for="Payment" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label asp-for="SignatureRequired" class="control-label"></label>
+                        <input asp-for="SignatureRequired" class="form-control" />
+                        <span asp-validation-for="SignatureRequired" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

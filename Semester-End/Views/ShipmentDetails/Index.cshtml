@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Semester_End.Models.ShipmentDetail>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Branch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChargesNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliveryAddressNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tracking)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Branch.Branch1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChargesNavigation.TrackingId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryAddressNavigation.TrackingId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tracking.TrackingId)
+            </td>
+          
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
